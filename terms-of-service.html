@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms of Service for NetGateManager: conditions of use, local router management, subscriptions, billing, and technical responsibilities." />
+  <title>Terms of Service — NetGateManager</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface-2: #f1f3f6;
+      --text: #111827;
+      --text-2: #4b5563;
+      --text-3: #6b7280;
+      --border: #e5e7eb;
+      --accent: #0b63ce;
+      --accent-soft: #e8f1fc;
+      --ok: #0f7a4a;
+      --ok-soft: #e7f6ee;
+      --info: #8a5a00;
+      --info-soft: #fdf3e1;
+      --no: #b42318;
+      --no-soft: #fdecea;
+      --radius: 12px;
+      --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --surface: #151b23;
+        --surface-2: #1c232d;
+        --text: #e6edf3;
+        --text-2: #b1bac4;
+        --text-3: #8b949e;
+        --border: #2a313c;
+        --accent: #58a6ff;
+        --accent-soft: #14253d;
+        --ok: #3fb950;
+        --ok-soft: #12261a;
+        --info: #d29922;
+        --info-soft: #2a2110;
+        --no: #f47067;
+        --no-soft: #2d1515;
+        --shadow: none;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85em;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* ---------- Header ---------- */
+    .masthead {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .masthead-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 48px 24px 40px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--text-2);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+    }
+
+    .brand-mark svg { width: 16px; height: 16px; }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+    }
+
+    .lede {
+      color: var(--text-2);
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0 0 24px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      color: var(--text-3);
+      font-size: 0.9rem;
+    }
+
+    .meta strong { color: var(--text-2); font-weight: 600; }
+
+    /* ---------- Layout ---------- */
+    .layout {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 24px;
+      font-size: 0.9rem;
+    }
+
+    .toc-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-3);
+      margin: 0 0 12px;
+    }
+
+    .toc ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid var(--border);
+    }
+
+    .toc a {
+      display: block;
+      padding: 5px 0 5px 14px;
+      margin-left: -1px;
+      border-left: 2px solid transparent;
+      color: var(--text-2);
+    }
+
+    .toc a:hover {
+      color: var(--text);
+      border-left-color: var(--accent);
+      text-decoration: none;
+    }
+
+    article { min-width: 0; }
+
+    section { padding-top: 8px; margin-bottom: 48px; }
+
+    h2 {
+      font-size: 1.35rem;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    h2 .num {
+      color: var(--text-3);
+      font-weight: 500;
+      font-size: 0.95rem;
+      font-variant-numeric: tabular-nums;
+      min-width: 1.6em;
+    }
+
+    p { margin: 0 0 14px; color: var(--text-2); }
+    p strong, li strong { color: var(--text); }
+
+    ul.list { margin: 0 0 14px; padding-left: 20px; color: var(--text-2); }
+    ul.list li { margin-bottom: 8px; }
+    ul.list li::marker { color: var(--text-3); }
+
+    /* ---------- At a glance ---------- */
+    .glance {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .glance-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .glance-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      margin: 0 0 12px;
+    }
+
+    .glance-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      flex: none;
+    }
+
+    .glance-icon svg { width: 16px; height: 16px; }
+
+    .is-ok .glance-icon { background: var(--ok-soft); color: var(--ok); }
+    .is-info .glance-icon { background: var(--info-soft); color: var(--info); }
+    .is-no .glance-icon { background: var(--no-soft); color: var(--no); }
+
+    .glance-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.92rem;
+      color: var(--text-2);
+    }
+
+    .glance-card li {
+      padding: 6px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .glance-card li:first-child { border-top: 0; padding-top: 0; }
+
+    /* ---------- Tables ---------- */
+    .table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow-x: auto;
+      margin: 0 0 16px;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    th {
+      background: var(--surface-2);
+      color: var(--text-3);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    td { color: var(--text-2); }
+    td:first-child { color: var(--text); font-weight: 600; min-width: 170px; }
+    td .sub { display: block; font-weight: 400; color: var(--text-3); font-size: 0.85rem; }
+
+    .tag {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    /* ---------- Callout ---------- */
+    .callout {
+      background: var(--accent-soft);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 0 0 16px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .callout p { color: var(--text); margin: 0; }
+
+    /* ---------- Contact ---------- */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 32px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact-card p { margin: 0; }
+
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .button:hover { text-decoration: none; filter: brightness(1.08); }
+
+    @media (prefers-color-scheme: dark) {
+      .button { color: #0d1117; }
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--text-3);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 24px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 32px; }
+      .toc {
+        position: static;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 16px 20px;
+      }
+      .toc ol { columns: 2; column-gap: 24px; border-left: 0; }
+      .toc a { padding-left: 0; border-left: 0; }
+      .glance { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .masthead-inner { padding: 32px 16px 28px; }
+      .layout { padding: 24px 16px 56px; }
+      th, td { padding: 12px; }
+      .toc { font-size: 0.85rem; }
+    }
+
+    @media (max-width: 380px) {
+      .toc ol { columns: 1; }
+    }
+
+    @media print {
+      body { background: #ffffff; }
+      .toc, .button { display: none; }
+      .layout { display: block; padding: 0; }
+      .table-wrap, .glance-card, .contact-card { box-shadow: none; }
+      section { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+        </span>
+        NetGateManager
+      </div>
+      <h1>Terms of Service</h1>
+      <p class="lede">These Terms govern your use of the NetGateManager application for Android, including local router management, network diagnostics, Pro subscription services, and trial periods. Please read them carefully.</p>
+      <div class="meta">
+        <span><strong>Last updated:</strong> November 2026</span>
+        <span><strong>Applies to:</strong> NetGateManager for Android</span>
+        <span><strong>Privacy Policy:</strong> <a href="privacy-policy.html">Read Privacy Policy</a></span>
+        <span><strong>Contact:</strong> <a href="mailto:bengrafikdev@gmail.com">bengrafikdev@gmail.com</a></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <p class="toc-title">Contents</p>
+      <ol>
+        <li><a href="#acceptance">Acceptance of terms</a></li>
+        <li><a href="#description">Service description</a></li>
+        <li><a href="#authorization">Router authorization</a></li>
+        <li><a href="#configuration">Configuration risks</a></li>
+        <li><a href="#subscriptions">Subscriptions &amp; trial</a></li>
+        <li><a href="#promo">Promo codes &amp; licenses</a></li>
+        <li><a href="#privacy">Privacy &amp; data handling</a></li>
+        <li><a href="#ip">Intellectual property</a></li>
+        <li><a href="#third-party">Third-party services</a></li>
+        <li><a href="#warranties">Warranty disclaimer</a></li>
+        <li><a href="#liability">Limitation of liability</a></li>
+        <li><a href="#consumer-rights">EU &amp; UK consumer rights</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#changes">Changes to these terms</a></li>
+        <li><a href="#contact">Contact &amp; trader info</a></li>
+      </ol>
+    </nav>
+
+    <article>
+
+      <div class="glance" aria-label="Terms of Service at a glance">
+        <div class="glance-card is-ok">
+          <h3>
+            <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            Local &amp; Secure
+          </h3>
+          <ul>
+            <li>Direct local communication over Wi-Fi/LAN</li>
+            <li>No cloud relay of router credentials or passwords</li>
+            <li>SIM SMS messages remain on your local router</li>
+            <li>Free read-only monitoring and status screens</li>
+          </ul>
+        </div>
+        <div class="glance-card is-info">
+          <h3>
+            <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+            Subscriptions &amp; Trial
+          </h3>
+          <ul>
+            <li>Billed securely through Google Play Billing</li>
+            <li>1-month free trial for eligible new subscribers</li>
+            <li>Cancel anytime in Google Play Store settings</li>
+            <li>Read-only views remain accessible if subscription ends</li>
+          </ul>
+        </div>
+        <div class="glance-card is-no">
+          <h3>
+            <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></span>
+            Your Responsibilities
+          </h3>
+          <ul>
+            <li>You must own or have permission to manage the router</li>
+            <li>You are responsible for band/cell lock configuration</li>
+            <li>Independent utility: not affiliated with ZTE or Huawei</li>
+            <li>No unlawful network interception or disruption</li>
+          </ul>
+        </div>
+      </div>
+
+      <section id="acceptance">
+        <h2><span class="num">01</span>Acceptance of terms</h2>
+        <p>By downloading, installing, accessing, or using <strong>NetGateManager</strong> (the "App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must not install, access, or use the App.</p>
+        <p>These Terms constitute a legally binding agreement between you ("User", "you") and the developer ("we", "us", or "our"). If you use the App on behalf of an organization or legal entity, you represent and warrant that you have full legal authority to bind that entity to these Terms.</p>
+      </section>
+
+      <section id="description">
+        <h2><span class="num">02</span>Service description</h2>
+        <p>NetGateManager is an Android utility application designed to monitor, analyze, and manage compatible cellular routers (including ZTE and Huawei 4G and 5G models). Key functionalities include:</p>
+        <ul class="list">
+          <li><strong>Real-time cellular metrics:</strong> Reading and displaying signal indicators (such as RSRP, RSRQ, SINR, RSSI), connected cell identity, PCI, frequency bands, and carrier aggregation status.</li>
+          <li><strong>Router configuration:</strong> Cell locking (PCI/EARFCN locking), frequency band locking, network mode selection (Auto/5G/4G), APN configuration, Wi-Fi radio settings, and administrative reboots.</li>
+          <li><strong>Local utilities:</strong> Reading and sending SMS messages stored on the router SIM card, connected Wi-Fi client management, Wi-Fi spectrum analysis, and internet speed tests.</li>
+        </ul>
+        <p>All router communications take place <strong>directly between your Android device and the local gateway address</strong> of your router (for example, <code>192.168.0.1</code> or <code>192.168.8.1</code>) over your local Wi-Fi or LAN connection.</p>
+      </section>
+
+      <section id="authorization">
+        <h2><span class="num">03</span>Router authorization &amp; acceptable use</h2>
+        <p>You agree to use NetGateManager only for lawful, authorized purposes and in full accordance with applicable laws:</p>
+        <ul class="list">
+          <li><strong>Authorization requirement:</strong> You represent and warrant that you are the lawful owner of any router you access with the App, or that you have received explicit, verifiable permission from the router's owner to access and modify its configuration.</li>
+          <li><strong>No unauthorized access:</strong> You must not use the App to attempt to gain unauthorized administrative access to third-party routers, public hotspots, or networks not under your legitimate control.</li>
+          <li><strong>No network disruption:</strong> You must not use the App in any manner that interferes with, degrades, or disrupts the operation of mobile network operators, cellular infrastructure, or other network subscribers.</li>
+          <li><strong>Integrity:</strong> You agree not to reverse engineer, decompile, disassemble, or tamper with the binary code, security protections, or licensing checks of the App, except to the extent expressly permitted by mandatory applicable law.</li>
+        </ul>
+      </section>
+
+      <section id="configuration">
+        <h2><span class="num">04</span>Router configuration &amp; technical risks</h2>
+        <p>NetGateManager provides advanced tools that interact directly with your router's hardware and cellular modem firmware:</p>
+        <div class="callout">
+          <p><strong>Cell &amp; Band Locking Caution:</strong> Locking your router to specific cellular frequencies (bands) or specific tower identifiers (PCI / Cell Lock) forces the modem to reject all other towers. If the selected cell or band experiences an outage, changes parameters, or provides insufficient signal, your router may lose cellular connection completely until the lock is released or the router is factory reset.</p>
+        </div>
+        <p>By using configuration and write features, you acknowledge and agree that:</p>
+        <ul class="list">
+          <li><strong>Sole responsibility:</strong> You are solely responsible for any settings or configuration changes applied to your router. We are not liable for any lost internet connectivity, telecommunications provider penalties, or disruptions caused by your settings.</li>
+          <li><strong>Restoring connectivity:</strong> If a configuration change leaves your router unable to connect to cellular service, you may need to reconnect locally via Wi-Fi or Ethernet cable to remove the lock, or perform a manual physical factory reset (via the router's hardware reset pinhole).</li>
+          <li><strong>Firmware variations:</strong> Router manufacturers and cellular carriers regularly release firmware updates. A carrier firmware update may modify, restrict, or remove administrative endpoints without notice. While we continuously verify and update compatibility profiles, we cannot guarantee that every feature will work across all firmware builds or carrier-customized variants.</li>
+        </ul>
+      </section>
+
+      <section id="subscriptions">
+        <h2><span class="num">05</span>Subscriptions, trial &amp; billing</h2>
+        <p>NetGateManager offers optional premium features ("Pro") via in-app subscriptions:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Plan / Tier</th><th>Features Included</th><th>Billing &amp; Access</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Free / Basic<span class="sub">Standard access</span></td>
+                <td>Read-only router monitoring, cellular telemetry display, speed tests, and basic Wi-Fi analysis.</td>
+                <td>Free indefinitely. No payment required.</td>
+              </tr>
+              <tr>
+                <td>Pro Subscription<span class="sub"><code>netgatemanager_pro_monthly</code></span><span class="tag">Auto-Renewable</span></td>
+                <td>Full access to cell locking, frequency band locking, write configuration, SMS sending, advanced firewall controls, and automated router health checks.</td>
+                <td>Monthly recurring billing via Google Play Billing. Billed at the beginning of each billing cycle until cancelled.</td>
+              </tr>
+              <tr>
+                <td>1-Month Free Trial<span class="sub">New subscribers only</span></td>
+                <td>Full unrestricted access to all Pro features during the trial duration.</td>
+                <td>1 month at zero cost. Automatically converts to the standard monthly rate unless cancelled before the trial ends.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="list">
+          <li><strong>Google Play Billing:</strong> All financial transactions, subscriptions, and renewals are handled exclusively by <strong>Google Play Billing</strong>. We never collect, process, or store credit card numbers, banking details, or billing addresses.</li>
+          <li><strong>Free Trial Conversion:</strong> If you are eligible for and activate a 1-month free trial, you will have access to Pro features without charge. Unless you cancel at least 24 hours before the end of the trial period, Google Play will automatically charge your selected payment method the recurring monthly subscription price.</li>
+          <li><strong>Cancellation Policy:</strong> You may cancel your subscription at any time directly through Google Play: open the Google Play Store app &rarr; tap your Profile icon &rarr; <strong>Payments &amp; subscriptions</strong> &rarr; <strong>Subscriptions</strong> &rarr; select <em>NetGateManager</em> &rarr; tap <strong>Cancel subscription</strong>.</li>
+          <li><strong>Effect of Cancellation:</strong> If you cancel, your Pro access remains active until the end of the current paid billing or trial period. After expiration, your app gracefully reverts to the basic tier; you will not lose stored read-only data or preferences.</li>
+          <li><strong>Refunds:</strong> Because payments are processed by Google Play, refund requests are governed by <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play's Refund Policy</a>. You can submit refund requests directly through the Google Play Store purchase history.</li>
+        </ul>
+      </section>
+
+      <section id="promo">
+        <h2><span class="num">06</span>Promo codes &amp; licenses</h2>
+        <p>From time to time, we may issue promotional codes granting temporary or extended access to Pro features:</p>
+        <ul class="list">
+          <li>Promo codes are non-transferable, cannot be exchanged for cash, and may be subject to specific validity periods or usage caps.</li>
+          <li>To prevent fraudulent reuse, redeeming a promo code verifies a non-reversible cryptographic device identifier with our validation server (hosted on Google Firebase).</li>
+          <li>We reserve the right to revoke promo codes that were acquired or distributed through unauthorized channels, fraud, or abuse.</li>
+        </ul>
+      </section>
+
+      <section id="privacy">
+        <h2><span class="num">07</span>Privacy &amp; data handling</h2>
+        <p>Your privacy is central to NetGateManager's architecture. The app does not route your network traffic through external servers, does not read your phone's SMS inbox, and never sells your data.</p>
+        <p>For complete details on what minimal technical diagnostics, optional feedback, crash logs, and speed test metrics are collected, please refer to our <a href="privacy-policy.html">Privacy Policy</a>, which forms an integral part of these Terms.</p>
+      </section>
+
+      <section id="ip">
+        <h2><span class="num">08</span>Intellectual property &amp; non-affiliation</h2>
+        <p><strong>Ownership:</strong> NetGateManager, including its application software, user interface design, visual assets, documentation, and source code, is protected by copyright, trademark, and intellectual property laws.</p>
+        <p><strong>Non-Affiliation Disclaimer:</strong></p>
+        <ul class="list">
+          <li>NetGateManager is an independent utility software application developed by an independent developer.</li>
+          <li>The App is <strong>not affiliated with, endorsed by, sponsored by, or associated with ZTE Corporation, Huawei Technologies Co., Ltd., or any cellular network carrier</strong>.</li>
+          <li>All product names, trademarks, registered trademarks, and model numbers (such as ZTE, MC801A, MC888, MU5001, Huawei, HiLink) are the property of their respective trademark holders. Their use within the App and documentation is strictly for identification, technical compatibility, and descriptive purposes.</li>
+        </ul>
+      </section>
+
+      <section id="third-party">
+        <h2><span class="num">09</span>Third-party services &amp; links</h2>
+        <p>The App integrates certain third-party libraries and services to provide crash reporting, push notifications, and speed testing (including Firebase Crashlytics, Firebase Remote Config, Cloudflare, fast.com, and ipapi.co).</p>
+        <p>These third-party services operate under their own terms and privacy practices. We do not endorse and are not liable for the performance, content, or policies of third-party networks or service providers.</p>
+      </section>
+
+      <section id="warranties">
+        <h2><span class="num">10</span>Disclaimer of warranties</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, NETGATEMANAGER IS PROVIDED ON AN <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> BASIS, WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND.</p>
+        <p>WE EXPRESSLY DISCLAIM ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, ACCURACY, AND NON-INFRINGEMENT. WE DO NOT GUARANTEE THAT THE APP WILL MEET YOUR INDIVIDUAL REQUIREMENTS, THAT ITS OPERATION WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT EVERY ROUTER FEATURE WILL REMAIN ACCESSIBLE ACROSS FUTURE MANUFACTURER FIRMWARE RELEASES.</p>
+      </section>
+
+      <section id="liability">
+        <h2><span class="num">11</span>Limitation of liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE DEVELOPER, AFFILIATES, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, DATA LOSS, HARDWARE DAMAGE, NETWORK DOWNTIME, OR CELLULAR DATA OVERAGE FEES) ARISING OUT OF OR IN CONNECTION WITH YOUR USE OR INABILITY TO USE THE APP OR ANY MODIFICATION OF YOUR ROUTER SETTINGS, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+        <p>OUR TOTAL AGGREGATE LIABILITY FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THESE TERMS OR THE APP SHALL BE LIMITED TO THE TOTAL AMOUNT PAID BY YOU FOR NETGATEMANAGER IN THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE CLAIM, OR TWENTY EUROS (€20.00), WHICHEVER IS GREATER.</p>
+      </section>
+
+      <section id="consumer-rights">
+        <h2><span class="num">12</span>European Union &amp; UK consumer rights</h2>
+        <p>If you are a consumer residing in the European Economic Area (EEA) or the United Kingdom, statutory consumer protection regulations apply to your purchase:</p>
+        <ul class="list">
+          <li><strong>Right of Withdrawal:</strong> Under EU and UK consumer law, you generally have a statutory 14-day right of withdrawal from digital contracts. For digital content and subscriptions delivered immediately through Google Play, you consent to immediate provision at the time of purchase. Refund and withdrawal requests are exercised in accordance with Google Play's consumer refund workflows.</li>
+          <li><strong>Statutory Guarantees:</strong> Nothing in these Terms shall limit or exclude mandatory consumer rights or legal conformity guarantees that cannot be waived or modified under your local jurisdiction's laws.</li>
+          <li><strong>Dispute Resolution:</strong> If you have an unresolved complaint, please reach out to us directly at <a href="mailto:bengrafikdev@gmail.com">bengrafikdev@gmail.com</a>. European consumers may also submit disputes through the European Commission's Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</li>
+        </ul>
+      </section>
+
+      <section id="termination">
+        <h2><span class="num">13</span>Termination &amp; suspension</h2>
+        <p>You may terminate your agreement with these Terms at any time by uninstalling the App from your devices and cancelling any active subscriptions via Google Play.</p>
+        <p>We reserve the right to suspend or terminate your access to online reporting services or promo code redemptions without prior notice if you violate these Terms, engage in fraudulent behavior, or abuse our backend infrastructure.</p>
+      </section>
+
+      <section id="changes">
+        <h2><span class="num">14</span>Changes to these terms</h2>
+        <p>We may update or modify these Terms from time to time to reflect changes in our features, applicable laws, or Google Play policies. When updates are published, the "Last updated" date at the top of this document will be updated accordingly.</p>
+        <p>Your continued use of NetGateManager following the posting of revised Terms signifies your acceptance of and agreement to the modified Terms.</p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="num">15</span>Contact &amp; trader declaration</h2>
+        <div class="contact-card">
+          <div>
+            <p><strong>NetGateManager Support &amp; Developer Contact</strong><br />
+            Questions regarding these Terms, licensing, or commercial trader inquiries?</p>
+          </div>
+          <a class="button" href="mailto:bengrafikdev@gmail.com">bengrafikdev@gmail.com</a>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <footer>&copy; 2026 NetGateManager. All rights reserved.</footer>
+
+</body>
+</html>
+
